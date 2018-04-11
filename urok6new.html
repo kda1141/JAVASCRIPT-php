@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>	
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<script>
+			var a = 10;
+			var b = 3;
+			alert(a % b);
+			var q = 10;
+			var w = 3;
+			var res = q % w;
+			if (res != 0) {
+				alert('Делится с остатком ' + res);
+			} else {
+				alert('Делится, результат деления: ' + (q / w));
+			};
+			var st = Math.pow(2, 10);
+			alert(st);
+			alert(Math.sqrt(245));
+			var arr = [4,2,5,19,13,0,10];
+			var sum = 0;
+			for (var i = 0; i < arr.length; i++) {
+				sum += Math.pow(arr[i],3);
+			}
+			alert('Корень суммы кубов = ' + Math.sqrt(sum));
+			alert(Math.sqrt(379).toFixed(0)); 
+			alert(Math.sqrt(379).toFixed(1)); 
+			alert(Math.sqrt(379).toFixed(2));
+			alert(Math.max(4, -2, 5, 19, -130, 0, 10)); 		
+			alert(Math.min(4, -2, 5, 19, -130, 0, 10)); 
+			alert(Math.floor(Math.random() * (100 - 1 + 1)) + 1);
+			var a = 59;
+			var b = 42;
+			alert(Math.abs(b-a));
+			var arrr = [12,15,20,25,59,79];
+			var sum2 = 0;
+			for (var i = 0; i < arrr.length; i++) {
+				sum2 += arrr[i]
+			}
+			var sred = sum2 / arrr.length;
+			alert(sred);
+
+		</script>
+	</head>
+	<body>
+		Это основное содержимое страницы.
+	</body>
+</html>
