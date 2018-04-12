@@ -1,0 +1,46 @@
+﻿
+<!DOCTYPE html>
+<html>	
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<script>
+var str = 'javascript';
+str = str[0].toUpperCase() + str.substr(1);
+alert(str);
+
+var str2 = 'java';
+str2 = str2.split('');
+str2[0] = str2[0].toUpperCase();
+var resultat = str2.join('');
+alert(resultat);
+
+var str3 = '123456';
+r = str3.split('').reverse().join('');
+alert(r);
+
+var str4 = '3751';
+arr = str4.split('');
+arr.sort();
+var r1 = arr.join('');
+alert(r1);
+
+var strr = 'http://qwertyuiwerfgbv';
+if (strr.substr(0, 7) == 'http://') {
+	alert('Да');
+} else {
+	alert('Нет');
+}
+
+var strrr = 'qwertyuicfvghj.html';
+if (strrr.substr(-5) == '.html') {
+	alert('Да');
+} else {
+	alert('Нет');
+}
+		</script>
+	</head>
+	<body>
+		Это основное содержимое страницы.
+	</body>
+</html>
