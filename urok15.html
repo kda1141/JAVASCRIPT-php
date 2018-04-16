@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<script>
+var arr = [];
+var x = 'x';
+for (var i = 0; i < 10; i++) {
+	arr.push(x);
+	x += 'x';
+}
+alert(arr);
+var arr1 = [];
+for (var i = 1; i < 5; i++) {
+	var str = '';
+	for (var j = 0; j < i; j++) {
+		str += i;
+	}
+	arr1.push(str);
+}
+alert(arr1);
+var arr2 = [23,4,2,54,1,2];
+var result = [];
+for (var i = arr2.length - 1; i >= 0; i--) {
+	result.push(arr2[i]);
+}
+alert(result);
+function func(arr3) {
+	var sum = 0;
+	for (var i = 0 ; i < arr3.length; i++) {
+		sum += arr3[i];
+		if (sum > 10) {
+			return i + 1;
+		}
+	}
+}
+
+alert(func([1, 2, 3, 4, 5, 6, 7, 8, 9])); 
+function arrayFill(zn, length) { 
+	var arr4 = [];
+	for (var i = 0; i < length; i++) {
+		arr4.push(zn);
+	}
+	return arr4;
+}
+
+alert(arrayFill('x', 5));
+	 
+		</script>
+	</head>
+	<body>
+		Это основное содержимое страницы.
+	</body>
+</html>
