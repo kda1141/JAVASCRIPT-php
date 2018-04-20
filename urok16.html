@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<script>
+var str ='abcde abcde abcde';
+var newArr = [];
+
+var arr = str.split(' ');
+for (var i = 0; i < arr.length; i++) {
+	newArr.push(ucfirst(arr[i]));
+}
+
+var newStr = newArr.join(' ');
+alert(newStr);
+
+function ucfirst(str) {
+	return str[0].toUpperCase() + str.substr(1);
+};
+function inArray(str1, arr1) {
+	for (var i = 0; i < arr1.length; i++) {
+		if (arr1[i] === str1) {
+			return true;
+		}
+	}
+	return false;
+}
+
+var str1 = 'яблоко';
+var arr1 = ['банан', 'яблоко', 'персик'];
+alert(inArray(str1, arr1));
+		</script>
+	</head>
+	<body>
+		Это основное содержимое страницы.
+	</body>
+</html>
