@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<style>
+		div {
+			height: 150px;
+			width: 150px;
+			border: 1px solid red;
+		}
+		input {
+			width: 300px;
+		}
+		</style>
+		<script>
+			function go(){
+			elem = document.getElementById('test');
+			alert(elem.value);
+		}
+		function go1(){
+			elem = document.getElementById('test1');
+			elem.value = 'Ой, я поменял свой текст!';
+		}
+		function go2(elem){
+			alert(elem.value);
+		}
+		function go3(elem){
+			elem.value = 'Ой, я поменял текст!';
+		}
+		function go4(elem){
+			elem.value = 'О, теперь на меня больше не нажать!';
+			elem.disabled = true;
+		}
+		function hide(){
+			elem = document.getElementById('test2');
+			elem.style.display = 'none';
+		}
+		function show(){
+			elem = document.getElementById('test2');
+			elem.style.display = 'inline-block';
+		}
+		function go5(){
+			var test11 = document.getElementById('test11');
+			var test22 = document.getElementById('test22');
+			var tmp = test11.value;
+			test11.value = test22.value;
+			test22.value = tmp;
+		}
+		function go6(){
+			var test6 = document.getElementById('test6');
+			var value = test6.value;
+			var res = document.getElementById('res');
+			res.value =  value*value;
+		}
+		function go7(elem){
+			elem.disabled = true;
+			elem.style.cursor = 'not-allowed';
+		}
+		
+		</script>
+
+	</head>
+	<body>
+		Это основное содержимое страницы.<br><br>
+
+		<button onclick="alert('Привет!')">Нажми на меня</button> <br><br>
+		<button onmouseover="alert('Привет!')">Наведи на меня</button><br><br>
+		<button ondblclick="alert('Привет!')">Двочной щелчок по мне</button><br><br>
+		<div onmouseout="alert('Привет!')">Наведи на меня мышь, а потом убери!</div><br><br>
+		<input type="text" value="Ку-ку" id="test">
+		<button onclick="go()">Нажми на меня!</button><br><br>
+		<input type="text" value="Ку-ку" id="test1">
+		<button onclick="go1()">Нажми на меня!</button><br><br>
+		<input type="text" value="Нажми на меня!" onfocus="go2(this)"><br><br>
+		<input type="text" value="Нажми на меня!" onfocus="go3(this)"><br><br>
+		<input type="submit" onclick="go4(this)" value="Нажми на меня!"><br><br>
+		<input type="text" value="Ку-ку" id="test2">
+		<button onclick="hide()">Нажми на меня!</button>
+		<button onclick="show()">Нажми потом на меня!</button><br><br>
+		<input type="text" value="Привет!" id="test11">
+		<input type="text" value="Пока!" id="test22">
+		<button onclick="go5()">Нажми на меня!</button><br><br>
+		<p>
+			Квадрат числа
+		</p>
+		<input type="text" value="" placeholder="Введите число!" id="test6">
+		<input id = "res" value = "Здесь появится результат." disabled>
+		<button onclick="go6()">Нажми на меня!</button><br><br>
+		<input type="submit" onclick="go7(this)" value="Нажми на меня!">
+				
+	</body>
+</html>
