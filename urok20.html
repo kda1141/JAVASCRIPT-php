@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<style>
+			input {
+			width: 300px;
+		}
+						
+		</style>
+		<script>
+		function go(){
+			var test = document.getElementById('test');
+			test.innerHTML = 'Ку-ку! А я <b>жирный</b>!';
+		}
+		function go1(){
+			var test1 = document.getElementById('test1');
+			test1.outerHTML = '<h3>Абзац превратился в h3!</h3>';
+		}
+		function go2(){
+			var test2 = document.getElementById('test2');
+			test2.outerHTML = '<h3>'+test2.innerHTML+'</h3>';
+		}
+		function go3(){
+			var input1 = +document.getElementById('input1').value;
+			var input2 = +document.getElementById('input2').value;
+			var res = document.getElementById('res');
+			res.innerHTML = input1 + input2;
+		}
+		function go4(){
+			var elements = document.querySelectorAll('p.zzz');
+			for (var i = 0; i < elements.length; i++){
+				elements[i].innerHTML = 'Ку-ку!';
+			}
+		}
+		function go5() {
+		var elems = document.querySelectorAll('p.www');
+		for (var i = 0; i < elems.length; i++) {
+			elems[i].innerHTML = i+1;
+			}
+		}
+		function go6(){
+			var test = document.getElementById('test6');
+			alert(test.getAttribute('class'));
+		}
+		function go7(elem){
+			var text = document.getElementById('text');
+			text.innerHTML = elem.value;
+		}	
+		
+		</script>
+
+	</head>
+	<body style="height: 100px;">
+		Это основное содержимое страницы.<br><br>
+		<p id="test">
+		При нажатии на кнопку текст в абзаце поменяется.
+		</p>
+		<input type="submit" value="Нажмите на меня!"  onclick="go()"><br><br>
+		
+		<p id="test1">
+		При нажатии на кнопку текст в абзаце поменяется
+		</p>
+		<input type="submit" value="Нажмите на меня!" onclick="go1()"><br><br>
+		
+		<p id="test2">
+		При нажатии на кнопку абзац станет h3, но текст останется.
+		</p>
+		<input type="submit" value="Нажмите на меня!" onclick="go2()"><br><br>
+		<input type="text" value="" id="input1">
+		+
+		<input type="text" value="" id="input2">
+		=
+		<span id = "res">?</span>
+		<br>
+		<br>
+		<button onclick="go3()">Нажмите чтобы сложить</button><br><br>
+
+		<p class="zzz">
+			При нажатии на кнопку текст в каждом абзаце поменяется.
+		</p>
+		<p class="zzz">
+			При нажатии на кнопку текст в каждом абзаце поменяется.
+		</p>
+		<p class="zzz">
+			При нажатии на кнопку текст в каждом абзаце поменяется.
+		</p>
+		<p class="zzz">
+			При нажатии на кнопку текст в каждом абзаце поменяется.
+		</p>
+		<h2>А я h2 и не поменяюсь!</h2>
+		<input type="submit" value="Нажмите на меня!"  onclick="go4()"><br><br>
+		<h2 class="www">Заголовок с классом www, не поменяется.</h2>
+		<p class="www">Абзац с классом www.</p>
+		<p class="www">Абзац с классом www.</p>
+		<p class="www">Абзац с классом www.</p>
+		<p>Просто абзац, не поменяется.</p>
+		<input type="submit" onclick="go5()"><br><br>
+		<p id = "test6" class="my-class">
+		Абзац с class="my-class".
+		</p>
+		<input type="submit" value="Нажми - и я выведу класс абзаца." onclick="go6()"><br><br>
+		<input type="text" value="" placeholder="Введи в меня текст!" id="test" onkeyup="go7(this)">
+		<span id="text"></span><br><br>
+			
+
+		
+				
+	</body>
+</html>
