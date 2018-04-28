@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<style>
+			input {
+			width: 200px;
+		}
+		#wrapper, #test {
+			text-align: center;
+		}
+		#test {
+			font-size: 24px;
+		}
+		#clock {
+			font-size: 40px;
+			margin: 0;
+		}
+		table {
+			margin: 0px auto;
+		}
+		td, th {
+			height: 30px;
+			width: 100px;
+		}			
+		</style>
+		<script>
+			function go(){
+				window.setInterval(timer, 1000);
+			}
+			function timer(){
+				var test = document.getElementById('test');
+				test.innerHTML = parseInt(test.innerHTML)+1;
+			}
+			function go1(){
+			window.timer1Id = window.setInterval(timer1, 500);
+			document.getElementById('go1').disabled = true;
+			document.getElementById('stop').disabled = false;
+			}
+		
+			function stop(){
+			window.clearInterval(window.timer1Id);
+			document.getElementById('go1').disabled = false;
+			document.getElementById('stop').disabled = true;
+			}
+			function timer1(){
+			var test1 = document.getElementById('test1');
+				test1.innerHTML = parseInt(test1.innerHTML)+1;
+			}
+			function go2(){
+			window.timer2Id = window.setInterval(timer2, 500);
+			}
+			function timer2(){
+				var clock = document.getElementById('clock');
+				var date = new Date();
+				clock.innerHTML = addZero(date.getHours())+':'+addZero(date.getMinutes())+':'+addZero(date.getSeconds());
+			}
+			
+			
+			function go3(){
+				window.timer3Id = window.setInterval(timer3, 1000);
+			}
+			function timer3(){
+				var seconds = document.getElementById('seconds');
+				var minutes = document.getElementById('minutes');
+				var hours3 = document.getElementById('hours3');
+				var now = new Date();
+				var midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1, 0, 0, 0);
+				var diff =  Math.floor((midnight - now)/1000);
+				var hoursRemain   = Math.floor(diff/(60*60));
+				var minutesRemain = Math.floor((diff-hoursRemain*60*60)/60);
+				var secondsRemain = Math.floor(diff%60);
+				hours.innerHTML   = hoursRemain;
+				minutes.innerHTML = addZero(minutesRemain);
+				seconds.innerHTML = addZero(secondsRemain); 
+			}
+			function addZero(num){
+				if(num <=9) return '0'+num;
+					else return num;
+			}
+			
+			
+			
+		</script>
+
+	</head>
+	<body onload="go2(),go3()">
+		<div id="wrapper">
+		<p id="test">
+			0
+		</p>
+		<input type="submit" value="Нажмите на меня!"  onclick="go()">
+		</div>
+	`	<div id="wrapper">
+		<p id="test1">
+			0
+		</p>
+		<input type="submit" value="Запустить таймер!"  onclick="go1()" id="go1">
+		<input type="submit" value="Остановить таймер!"  onclick="stop()"  id="stop" disabled>
+		</div><br><br>
+		<div id="wrapper">
+		<p id="clock">
+			00:00:00
+		</p>
+		</div><br><br>
+		<div id="wrapper">
+		<p>
+			До полуночи осталось:
+		</p>
+		<table border="1" cellpadding="0" cellspacing="0" >
+			<tr>
+				<th>Часы</th>
+				<th>Минуты</th>
+				<th>Секунды</th>
+			</tr>
+			<tr>
+				<td id="hours"></td>
+				<td id="minutes"></td>
+				<td id="seconds"></td>
+			</tr>
+		</table>
+		</div>
+		
+		
+			
+	</body>
+</html>
