@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<script>
+			var elems = document.getElementsByTagName('img');
+			for (var i = 0; i < elems.length; i++) {
+				elems[i].onclick = func;
+			}
+
+			function func() {
+				alert(this.getAttribute('src'));
+			}
+			var elems1 = document.getElementsByTagName('a');
+			for (var i = 0; i < elems.length; i++) {
+				elems1[i].addEventListener('mouseover', func);
+			}
+
+			function func2() {
+				this.title = this.innerHTML;
+			}
+			var elems2 = document.getElementsByTagName('a');
+			for (var i = 0; i < elems2.length; i++) {
+				elems2[i].addEventListener('mouseover', func);
+			}
+
+			function func2() {
+				this.innerHTML = this.innerHTML + ' (' + this.href + ')';
+			}
+			var elems3 = document.getElementsByTagName('a');
+			for (var i = 0; i < elems3.length; i++) {
+				elems3[i].addEventListener('mouseover', func3);
+			}
+
+			function func3() {
+				this.innerHTML = this.innerHTML + ' (' + this.href + ')';
+				this.removeEventListener('mouseover', func3);
+			}		
+			var elems4 = document.getElementsByTagName('input');
+			var parag = document.getElementById('test');
+			for (var i = 0; i < elems4.length; i++) {
+				elems4[i].addEventListener('blur', func4);
+			}
+
+			function func4() {
+				parag.innerHTML = this.value;
+			}		
+
+		</script>
+	</head>
+	<body>
+		<img src="img/1.jpg">
+		<img src="img/2.jpg">
+		<img src="img/3.jpg"><br>
+		<a href="#" title="">Текст первой ссылки</a><br>
+		<a href="#" title="">Текст второй ссылки</a><br>
+		<a href="#" title="">Текст третьей ссылки</a><br>
+		<a href="http://ya.ru" title="">Текст первой ссылки</a><br>
+		<a href="http://tut.by" title="">Текст второй ссылки</a><br>
+		<a href="http://google.com" title="">Текст третьей ссылки</a><br>
+		<a href="http://ya.ru" title="">Текст первой ссылки</a><br>
+		<a href="http://tut.by" title="">Текст второй ссылки</a><br>
+		<a href="http://google.com" title="">Текст третьей ссылки</a><br>
+		<input type="text" value="1">
+		<input type="text" value="2">
+		<input type="text" value="3">
+		<p id="test"></p>
+	</body>
+</html>
