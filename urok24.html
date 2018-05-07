@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<style>
+
+		</style>
+		<script>
+			var elem = document.getElementById('elem');
+			elem.classList.add('www');	
+			var elem1 = document.getElementById('elem1');
+			elem1.classList.remove('www'); 
+			var elem2 = document.getElementById('elem2');
+			alert(elem2.classList.length);	
+			var elem3 = document.getElementById('elem3');
+			elem3.classList.toggle('www');
+			var elem4 = document.getElementById('elem4');
+			elem4.style.cssText = 'color: red; font-size: 30px; border: solid 1px black;';
+			function func() {
+				var elem5 = document.getElementById('elem5');
+				alert(elem5.tagName);
+			}
+			function func() {
+				var elem66 = document.getElementById('elem6');
+				alert(elem6.tagName.toLowerCase());
+			}
+			var elems = document.querySelectorAll('.lll');
+			for (var i = 0; i < elems.length; i++) {
+				elems[i].innerHTML = elems[i].innerHTML + elems[i].tagName.toLowerCase();
+			} 	
+			var elemm = document.getElementById('elemm');
+			elemm.insertAdjacentHTML('beforeBegin','<span>!!!</span>');
+			elemm.insertAdjacentHTML('afterEnd','<span>!!!</span>');
+			elemm.insertAdjacentHTML('afterBegin','<span>!!!</span>');
+			elemm.insertAdjacentHTML('beforeEnd','<span>!!!</span>'); 
+			var elemmm = document.getElementById('elemmm');
+			var prev = elemmm.previousElementSibling;
+			var prev1 = elemmm.nextElementSibling;
+			prev.innerHTML = prev.innerHTML + '!';
+			prev1.innerHTML = prev1.innerHTML + '!';
+			var elem0 = document.getElementById('elem0');
+			elem0.parentElement.style.color = 'red';]
+			elem0.parentElement.parentElement.style.color = 'red';
+			
+				
+			  
+					
+
+		</script>
+	</head>
+	<body>
+		<p id="elem"></p>
+		<p id="elem1" class="www bbb"></p>	
+		<p id="elem2" class="www zzz aaa"></p>
+		<p id="elem3" class="www"></p><br>
+		<p id="elem4" style="color: red; font-size: 30px; border: solid 1px black;">javascript</p><br><br>
+		<p id="elem5" onclick="func()">Элемент</p><br><br>
+		<p id="elem6" onclick="func()">Элемент2</p><br><br>
+		<h1 class="lll">Элемент 1</h1>
+		<p class="lll">Элемент 2</p>
+		<div class="lll">Элемент 3</div><br><br>
+		<span>!!!</span><p id="elemm"><span>!!!</span>Элемент3<span>!!!</span></p><span>!!!</span><br><br>
+		<ul>
+			<li>пункт 1 !</li>
+			<li id="elemmm">пункт 2</li>
+			<li>пункт 3 !</li>
+		</ul>
+		<div>
+		<p>java</p>
+		<p style="color: red">Текст родителя <span id="elem0" style="color: red">потомок</span></p>
+		</div>
+		
+			
+
+	</body>
+</html>
